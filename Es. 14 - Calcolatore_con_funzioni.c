@@ -14,29 +14,29 @@ int main(void) {
 
   do{
     printf("Che cosa vuoi fare: \n1) Somma \n2) Sottrazione \n3)Divisione \n4)Moltiplicazione \n0)Esci dal programma \n\nInserisci la tua scelta: ");
-    scanf("%d", decisione);
-    } while(decisione >= 0 && decisione < 5);
+    scanf("%d", &decisione);
+    } while(decisione < 0 || decisione > 5);
 
   switch(decisione)
   {
     case 1: {
       do{
-        printf("Per sommare due numeri interi permi 1 per sommare due numeri reali premi 2");
-        scanf("%d",cond);
-        } while(cond != 1 || cond != 2);
+        printf("\nPer sommare due numeri interi permi 1 per sommare due numeri reali premi 2: ");
+        scanf("%d",&cond);
+        } while(cond < 0 || cond > 3);
 
       if (cond == 1){
         printf("Inserisci il primo numero: ");
-        scanf("%d",num1);
+        scanf("%d",&num1);
         printf("Inserisci il secondo numero: ");
-        scanf("%d",num2);
+        scanf("%d",&num2);
 
         printf("Il risultato è %d",somma(num1, num2));
       } else {
         printf("Inserisci il primo numero: ");
-        scanf("%f",n1);
+        scanf("%f",&n1);
         printf("Inserisci il secondo numero: ");
-        scanf("%f",n2);
+        scanf("%f",&n2);
 
         printf("Il risultato è %f", sommaReal(n1, n2));
         }
@@ -45,9 +45,9 @@ int main(void) {
     
     case 2: {
       printf("Inserisci il primo numero: ");
-      scanf("%d",num1);
+      scanf("%d",&num1);
       printf("Inserisci il secondo numero: ");
-      scanf("%d",num2);
+      scanf("%d",&num2);
 
       printf("Il risultato è %d", sottrazione(num1, num2));
       break;
@@ -55,18 +55,18 @@ int main(void) {
     
     case 3: {
       printf("Inserisci il primo numero: ");
-      scanf("%f",n1);
+      scanf("%f",&n1);
       printf("Inserisci il secondo numero: ");        
-      scanf("%f",n2);
+      scanf("%f",&n2);
 
       printf("Il risultato è %f", divisione(n1, n2));
       break;
     }
     case 4: {
       printf("Inserisci il primo numero: ");
-      scanf("%d",num1);
+      scanf("%d",&num1);
       printf("Inserisci il secondo numero: ");
-      scanf("%d",num2);
+      scanf("%d",&num2);
 
       printf("Il risultato è %d", moltiplicazione(num1, num2));
       break;
